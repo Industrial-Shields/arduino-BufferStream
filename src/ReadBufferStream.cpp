@@ -1,27 +1,27 @@
 #include "ReadBufferStream.h"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-ReadBufferStream::ReadBufferStream(void *buff, size_t len) : BaseBufferStream(buff, len) {
+ReadBufferStream::ReadBufferStream(const void *buff, size_t len) : BaseBufferStream((void*) buff, len) {
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 int ReadBufferStream::available() {
-	return len;
+	return _len;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 int ReadBufferStream::read() {
-	if (len == 0) {
+	if (_len == 0) {
 		return -1;
 	}
-	--len;
-	return *buff++;
+	--_len;
+	return *_buff++;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 int ReadBufferStream::peek() {
-	if (len == 0) {
+	if (_len == 0) {
 		return -1;
 	}
-	return *buff;
+	return *_buff;
 }

@@ -6,10 +6,10 @@ WriteBufferStream::WriteBufferStream(void *buff, size_t len) : BaseBufferStream(
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 size_t WriteBufferStream::write(uint8_t value) {
-	if (len == 0) {
+	if (_len == 0) {
 		return 0;
 	}
-	*buff++ = value;
-	--len;
+	*_buff++ = value;
+	--_len;
 	return 1;
 }

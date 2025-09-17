@@ -5,7 +5,7 @@
 
 class ReadBufferStream : public BaseBufferStream {
 	public:
-		explicit ReadBufferStream(void *buff, size_t len);
+		explicit ReadBufferStream(const void* buff, size_t len);
 
 	public:
 		virtual int available();

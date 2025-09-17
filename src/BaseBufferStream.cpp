@@ -18,5 +18,5 @@
 #include "BaseBufferStream.h"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-BaseBufferStream::BaseBufferStream(void *buff, size_t len) : buff(buff), len(len) {
+BaseBufferStream::BaseBufferStream(void *buff, size_t len) : _buff((uint8_t*) buff), _len(len) {
 }

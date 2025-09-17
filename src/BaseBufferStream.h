@@ -17,8 +17,8 @@ class BaseBufferStream : public Stream {
 		using Print::write;
 
 	protected:
-		uint8_t *buff;
-		size_t len;
+		uint8_t* _buff;
+		size_t _len;
 };
 
 #endif // __BaseBufferStream_H__
